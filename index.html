@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMA_TNBC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Network Meta-analysis for Triple Negative Breast Cancer</h1>
+        <h2 class="subtitle" onclick = "toggleContent('nmaContent', 'nma.txt')">
+            Network Meta-analysis <span class="arrow">▼</span>
+        </h2>
+        <div id="nmaContent" class="collapsible-content">
+            <div class="loading">Loading content</div>
+        </div>
+        <h2 class="subtitle" onclick = "toggleContent('tnbcContent', 'tnbc.txt')">
+            Triple Negative Breast Cancer <span class="arrow">▼</span> 
+        </h2>
+        <div id="tnbcContent" class="collapsible-content">
+            <div class="loading">Loading content</div>
+        </div>
+        <h2 class="subtitle" onclick = "toggleContent('aimContent', 'aim.txt')">
+            Aim of this study <span class="arrow">▼</span>
+        </h2>
+        <div id="aimContent" class="collapsible-content">
+            <div class="loading">Loading content</div>
+        </div>
+    </div>
+
+</body>
+</html>
