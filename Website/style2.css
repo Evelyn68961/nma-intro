@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+
+    /* soft diagonal hatch */
+    background: repeating-linear-gradient(
+        -45deg,
+        #f2f4f7 0 10px,    /* light stripe */
+        #e9edf2 10px 20px /* slightly darker stripe */
+        );
+    /* keep the pattern stationary while scrolling (optional) */
+    background-attachment: fixed;
+}
+
+.container{
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title{
+    font-size: 3rem;
+    font-family: 'Nunito', sans-serif;
+    color: #4682B4;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative; 
+    background: linear-gradient(to bottom, #f5f5f5 80%, #5c91bc9a 100%);
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 45px rgba(0,0,0,0.1);
+}
+
+.title-text{
+    display: inline-block;
+    transition: color 0.6s ease, transform 0.6s ease;
+}
+
+.title-text:hover{
+    color: #2e5984;
+    transform: scale(1.02);
+}
+
+.background-section{
+    background: radial-gradient(ellipse at center,
+        white 0%,
+        white 70%,
+        rgba(255, 255, 255, 0.9) 80%,
+        rgba(255, 255, 255, 0.6) 90%,
+        rgba(255, 255, 255, 0.3) 95%,
+        transparent 100%);
+    position: relative;
+}
+
+.background-header{
+    background: #4682B4;
+    color: white;
+    padding: 20px 30px;
+    font-size: 2.5rem;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    position: relative;
+    transition: background 0.4s ease;
+}
+
+.background-header:hover{
+    background: #3b6f99;
+}
+
+.background-text{
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.background-header:hover .background-text{
+    transform: scale(1.02);
+}
+
+.tab-container{
+    display: flex;
+    background: #e8f4fd;
+    /* border-bottom: 1px solid #d0e7f7; */
+    /* border-radius: 0 0 15px 15px; */
+}
+
+.tab{
+    flex: 1;
+    padding: 15px 20px;
+    background: #6fa8dc;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab:last-child{
+    border-right: none;
+}
+
+.tab:hover{
+    background: #5a96d0;
+    transform: translateY(-2px);
+}
+
+.tab.active{
+    background: #3b6f99;
+    box-shadow: inset 0 3px 0 #2e5984;
+}
+
+.arrow{
+    font-size: 1.2rem;
+    transition: transform 0.5s ease;
+}
+
+.arrow.rotated{
+    transform: rotate(360deg);
+}
+
+.content-area{
+    background: white;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-content{
+    display: none;
+    padding: 50px;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #333;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active{
+    display: block;  /* creates tab-switching effect */
+}
+
+.tab-content p{
+    margin-bottom: 15px;
+    text-align: justify;  /* Makes text align to both left and right margins */
+    font-family: 'Nunito', sans-serif;;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.loading{
+    display: flex;           /* Makes container a flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    height: 200px;          /* Gives container specific height */
+    font-size: 1.2rem;      /* Makes text slightly larger than default */
+    color: #666;            /* Gray text color */
+    font-family: 'Nunito', sans-serif; /* Custom font with fallback */
+}
+
+.loading::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4682b4;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    margin-left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
