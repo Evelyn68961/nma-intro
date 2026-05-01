@@ -58,6 +58,19 @@ body{
     position: relative;
 }
 
+.highlights-section{
+    margin-top: 40px;
+    position: relative;
+}
+
+.highlights-section .background-header{
+    border-radius: 15px 15px 0 0;
+}
+
+.highlights-area{
+    min-height: 0;
+}
+
 .background-header{
     background: #4682B4;
     color: white;

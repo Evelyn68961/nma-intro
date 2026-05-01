@@ -72,8 +72,16 @@ async function loadTabContent(tabName, contentElement){
     }
 }
 
+async function loadHighlights() {
+    const el = document.getElementById('highlightsContent');
+    if (!el || !el.innerHTML.includes('Loading')) return;
+    const content = await loadContent('highlights.txt');
+    setTimeout(() => { el.innerHTML = content; }, 300);
+}
+
 // initiate the first tab on page load
 document.addEventListener('DOMContentLoaded', function(){
     showTab('nma');
+    loadHighlights();
 });
 
