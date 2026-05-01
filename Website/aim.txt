@@ -1,3 +1,0 @@
-Despite improvements in pathologic complete response (pCR) achieved by novel therapeutic combinations, the optimal neoadjuvant regimen for triple-negative breast cancer remains unclear, particularly when efficacy must be weighed against treatment-related hematologic toxicity.
-
-To address this clinical gap, we conducted a systematic review and network meta-analysis of randomized controlled trials to evaluate the comparative efficacy and safety of neoadjuvant treatments in early-stage TNBC, with pCR as the primary outcome of interest.

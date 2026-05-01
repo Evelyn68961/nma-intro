@@ -171,6 +171,176 @@ body{
     text-align: center !important;
 }
 
+/* ---------- TNBC receptors + flow ---------- */
+.receptor-row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 10px 0 18px;
+}
+
+@media (max-width: 720px){
+    .receptor-row{ grid-template-columns: 1fr; }
+}
+
+.receptor-chip{
+    background: white;
+    border: 2px solid #e0c4cb;
+    border-top: 4px solid #c0455e;
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(192, 69, 94, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.receptor-chip:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(192, 69, 94, 0.18);
+}
+
+.receptor-name{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2e5984;
+    margin-bottom: 6px;
+}
+
+.receptor-name .minus{
+    display: inline-block;
+    background: #c0455e;
+    color: white;
+    width: 28px;
+    height: 28px;
+    line-height: 24px;
+    border-radius: 50%;
+    margin-left: 6px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.receptor-sub{
+    font-size: 0.9rem;
+    color: #666;
+    font-family: 'Nunito', sans-serif;
+}
+
+.receptor-arrow{
+    text-align: center;
+    color: #4682B4;
+    font-size: 1.4rem;
+    margin: 4px 0 8px;
+}
+
+.tnbc-pill{
+    display: block;
+    width: fit-content;
+    margin: 0 auto 22px;
+    background: linear-gradient(90deg, #4682B4, #2e5984);
+    color: white;
+    padding: 10px 26px;
+    border-radius: 999px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 14px rgba(70, 130, 180, 0.25);
+}
+
+.flow-row{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px 0 6px;
+    flex-wrap: wrap;
+}
+
+.flow-step{
+    flex: 1;
+    min-width: 160px;
+    background: #f4f8fb;
+    border-radius: 10px;
+    padding: 16px 14px;
+    text-align: center;
+    border-bottom: 3px solid #4682B4;
+}
+
+.flow-num{
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 8px;
+    background: #4682B4;
+    color: white;
+    border-radius: 50%;
+    line-height: 32px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+.flow-title{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #2e5984;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.flow-desc{
+    font-size: 0.9rem;
+    color: #555;
+    font-family: 'Nunito', sans-serif;
+}
+
+.flow-arrow{
+    align-self: center;
+    color: #4682B4;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+@media (max-width: 720px){
+    .flow-arrow{ transform: rotate(90deg); }
+}
+
+/* ---------- Aim labeled blocks ---------- */
+.aim-block{
+    background: white;
+    border-left: 5px solid #4682B4;
+    padding: 18px 22px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 10px rgba(70, 130, 180, 0.08);
+}
+
+.aim-block-objective{
+    border-left-color: #4a9d7a;
+}
+
+.aim-block .aim-label{
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #4682B4;
+    margin-bottom: 8px;
+}
+
+.aim-block-objective .aim-label{
+    color: #4a9d7a;
+}
+
+.aim-block p{
+    margin: 0 !important;
+    text-align: left !important;
+    color: #333;
+    line-height: 1.65;
+    font-family: 'Nunito', sans-serif;
+}
+
 /* ---------- Highlights cards ---------- */
 .highlights-intro{
     margin-bottom: 25px;
