@@ -52,19 +52,15 @@ function showTab(tabName){
 }
 
 async function loadTabContent(tabName, contentElement){
-    // map file names to tab names
     const fileMap = {
-        'nma': 'nma.txt',
         'tnbc': 'tnbc.txt',
-        'aim':'aim.txt'
+        'aim': 'aim.txt'
     };
 
-    // only load if content shows "Loading"
     if (contentElement.innerHTML.includes('Loading')){
         const fileName = fileMap[tabName];
         if(fileName){
             const content = await loadContent(fileName);
-            // add delay to show loading animation
             setTimeout(() => {
                 contentElement.innerHTML = content;
             }, 300);
@@ -72,16 +68,7 @@ async function loadTabContent(tabName, contentElement){
     }
 }
 
-async function loadHighlights() {
-    const el = document.getElementById('highlightsContent');
-    if (!el || !el.innerHTML.includes('Loading')) return;
-    const content = await loadContent('highlights.txt');
-    setTimeout(() => { el.innerHTML = content; }, 300);
-}
-
-// initiate the first tab on page load
 document.addEventListener('DOMContentLoaded', function(){
     showTab('nma');
-    loadHighlights();
 });
 

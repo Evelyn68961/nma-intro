@@ -32,7 +32,31 @@
             </div>
             <div class="content-area">
                 <div id="nmaContent" class="tab-content active">
-                    <div class="loading">Loading content...</div>
+                    <p>Traditional pairwise meta-analyses are limited to summarizing direct evidence from randomized controlled trials that compare two interventions. When many competing treatments exist and head-to-head trials are scarce, this approach falls short.</p>
+                    <p><strong>Network meta-analysis (NMA)</strong> extends conventional meta-analysis by simultaneously synthesizing both <em>direct</em> and <em>indirect</em> evidence across a network of interventions, allowing relative effects to be estimated even between treatments that have never been tested head-to-head, and providing a framework for ranking therapies by efficacy and tolerability.</p>
+
+                    <div class="diagram-wrap">
+                        <svg viewBox="0 0 420 320" class="nma-network" role="img" aria-label="Network meta-analysis diagram">
+                            <defs>
+                                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="0" markerHeight="0"></marker>
+                            </defs>
+                            <line x1="210" y1="60"  x2="80"  y2="180" class="edge direct"/>
+                            <line x1="210" y1="60"  x2="340" y2="180" class="edge direct"/>
+                            <line x1="80"  y1="180" x2="210" y2="280" class="edge direct"/>
+                            <line x1="340" y1="180" x2="210" y2="280" class="edge direct"/>
+                            <line x1="210" y1="60"  x2="210" y2="280" class="edge indirect"/>
+
+                            <g class="node"><circle cx="210" cy="60"  r="32"/><text x="210" y="65">A</text></g>
+                            <g class="node"><circle cx="80"  cy="180" r="32"/><text x="80"  y="185">B</text></g>
+                            <g class="node"><circle cx="340" cy="180" r="32"/><text x="340" y="185">C</text></g>
+                            <g class="node"><circle cx="210" cy="280" r="32"/><text x="210" y="285">D</text></g>
+                        </svg>
+                        <div class="diagram-legend">
+                            <span class="legend-item"><span class="swatch swatch-direct"></span> Direct comparison (head-to-head trial exists)</span>
+                            <span class="legend-item"><span class="swatch swatch-indirect"></span> Indirect comparison (inferred via the network)</span>
+                        </div>
+                        <p class="diagram-caption">Even though no trial directly compares <strong>A</strong> with <strong>D</strong>, NMA can estimate their relative effect by combining the A–B–D and A–C–D paths.</p>
+                    </div>
                 </div>
                 <div id="tnbcContent" class="tab-content">
                     <div class="loading">Loading content...</div>
@@ -49,7 +73,44 @@
             </div>
             <div class="content-area highlights-area">
                 <div id="highlightsContent" class="static-content">
-                    <div class="loading">Loading content...</div>
+                    <p class="highlights-intro">Phase 2-3 randomized controlled trials of neoadjuvant therapy in early and locally advanced TNBC were synthesized from Medline, Embase, and the Cochrane Library through August 2025, covering standard chemotherapy, PD-1 / PD-L1 inhibitors, and PARP inhibitors.</p>
+
+                    <div class="finding-grid">
+                        <div class="finding-card card-efficacy">
+                            <div class="finding-icon">★</div>
+                            <div class="finding-label">Best pCR</div>
+                            <h3 class="finding-title">Maximum tumor response</h3>
+                            <div class="regimen-badge">PD-1 + platinum + dose-dense A&amp;T-ChT</div>
+                            <p>Highest pathologic complete response rate, but with greater hematologic toxicity (notably anemia) — requires intensive monitoring and supportive care.</p>
+                        </div>
+
+                        <div class="finding-card card-survival">
+                            <div class="finding-icon">♥</div>
+                            <div class="finding-label">Best survival</div>
+                            <h3 class="finding-title">Longest-term benefit</h3>
+                            <div class="regimen-badge">PD-L1 + dose-dense A&amp;T-ChT</div>
+                            <p>Greatest improvements in overall survival and event-free / disease-free / relapse-free survival.</p>
+                        </div>
+
+                        <div class="finding-card card-balance">
+                            <div class="finding-icon">⚖</div>
+                            <div class="finding-label">Balanced choice</div>
+                            <h3 class="finding-title">Efficacy with manageable toxicity</h3>
+                            <div class="regimen-badge">PD-1 + A&amp;T-ChT</div>
+                            <div class="regimen-badge">PD-L1 + PARPi + A&amp;T-ChT</div>
+                            <p>Good efficacy while keeping treatment-related toxicity more manageable.</p>
+                        </div>
+
+                        <div class="finding-card card-safety">
+                            <div class="finding-icon">!</div>
+                            <div class="finding-label">Safety signal</div>
+                            <h3 class="finding-title">Watch for hematologic toxicity</h3>
+                            <div class="regimen-badge">Dose-dense A&amp;T-ChT</div>
+                            <p>Increased risk of grade 3-4 neutropenia and thrombocytopenia — important when intensifying treatment.</p>
+                        </div>
+                    </div>
+
+                    <p class="highlights-takeaway"><strong>Clinical takeaway —</strong> these findings support a more individualized approach to neoadjuvant treatment selection in TNBC, weighing each patient's potential for benefit against the expected toxicity of intensified regimens.</p>
                 </div>
             </div>
         </div>
