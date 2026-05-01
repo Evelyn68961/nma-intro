@@ -71,6 +71,21 @@ body{
     min-height: 0;
 }
 
+.static-content{
+    display: block;
+    padding: 50px;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #333;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.static-content p{
+    margin-bottom: 15px;
+    text-align: justify;
+    font-family: 'Nunito', sans-serif;
+}
+
 .background-header{
     background: #4682B4;
     color: white;
