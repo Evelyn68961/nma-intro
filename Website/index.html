@@ -37,26 +37,57 @@
                     <p><strong>Network meta-analysis (NMA)</strong> extends conventional meta-analysis by simultaneously synthesizing both <em>direct</em> and <em>indirect</em> evidence across a network of interventions, allowing relative effects to be estimated even between treatments that have never been tested head-to-head, and providing a framework for ranking therapies by efficacy and tolerability.</p>
 
                     <div class="diagram-wrap">
-                        <svg viewBox="0 0 420 320" class="nma-network" role="img" aria-label="Network meta-analysis diagram">
-                            <defs>
-                                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="0" markerHeight="0"></marker>
-                            </defs>
-                            <line x1="210" y1="60"  x2="80"  y2="180" class="edge direct"/>
-                            <line x1="210" y1="60"  x2="340" y2="180" class="edge direct"/>
-                            <line x1="80"  y1="180" x2="210" y2="280" class="edge direct"/>
-                            <line x1="340" y1="180" x2="210" y2="280" class="edge direct"/>
-                            <line x1="210" y1="60"  x2="210" y2="280" class="edge indirect"/>
+                        <svg viewBox="0 0 460 360" class="nma-network" role="img" aria-label="Network meta-analysis diagram for TNBC regimens, with chemotherapy as the shared comparator">
+                            <line x1="230" y1="180" x2="230" y2="70"  class="edge direct"/>
+                            <line x1="230" y1="180" x2="80"  y2="290" class="edge direct"/>
+                            <line x1="230" y1="180" x2="380" y2="290" class="edge direct"/>
 
-                            <g class="node"><circle cx="210" cy="60"  r="32"/><text x="210" y="65">A</text></g>
-                            <g class="node"><circle cx="80"  cy="180" r="32"/><text x="80"  y="185">B</text></g>
-                            <g class="node"><circle cx="340" cy="180" r="32"/><text x="340" y="185">C</text></g>
-                            <g class="node"><circle cx="210" cy="280" r="32"/><text x="210" y="285">D</text></g>
+                            <line x1="230" y1="70"  x2="80"  y2="290" class="edge indirect"/>
+                            <line x1="230" y1="70"  x2="380" y2="290" class="edge indirect"/>
+                            <line x1="80"  y1="290" x2="380" y2="290" class="edge indirect"/>
+
+                            <g class="node node-anchor">
+                                <circle cx="230" cy="180" r="30"/>
+                                <text x="230" y="184">ChT</text>
+                            </g>
+
+                            <g class="node">
+                                <circle cx="230" cy="70" r="22"/>
+                            </g>
+                            <text class="node-label" x="230" y="32">PD-1 + ChT</text>
+
+                            <g class="node">
+                                <circle cx="80" cy="290" r="22"/>
+                            </g>
+                            <text class="node-label" x="80" y="335">PD-L1 + ChT</text>
+
+                            <g class="node">
+                                <circle cx="380" cy="290" r="22"/>
+                            </g>
+                            <text class="node-label" x="380" y="335">PARPi + ChT</text>
                         </svg>
                         <div class="diagram-legend">
                             <span class="legend-item"><span class="swatch swatch-direct"></span> Direct comparison (head-to-head trial exists)</span>
                             <span class="legend-item"><span class="swatch swatch-indirect"></span> Indirect comparison (inferred via the network)</span>
                         </div>
-                        <p class="diagram-caption">Even though no trial directly compares <strong>A</strong> with <strong>D</strong>, NMA can estimate their relative effect by combining the A–B–D and A–C–D paths.</p>
+                        <p class="diagram-caption">In TNBC, most novel agents have been tested against the chemotherapy backbone (<strong>ChT</strong>) but rarely against each other. NMA leverages this shared comparator to estimate, for example, <strong>PD-1 vs PARPi</strong> even though no trial directly compares them.</p>
+                    </div>
+
+                    <div class="method-block">
+                        <div class="method-label">Two key assumptions</div>
+                        <p><strong>Transitivity.</strong> Indirect comparisons are valid only when the trials being combined enrolled comparable patients — similar disease stage, prior therapies, and other potential effect modifiers. If populations differ in ways that change how a treatment works, the indirect estimate may be biased.</p>
+                        <p><strong>Consistency.</strong> Wherever both direct and indirect evidence exist for the same comparison, they should agree. Disagreement is checked statistically (for example, node-splitting or design-by-treatment interaction models) and signals that the network may be combining studies it shouldn't.</p>
+                    </div>
+
+                    <div class="method-block">
+                        <div class="method-label">How treatments get ranked</div>
+                        <p>Once relative effects are estimated, every pair of treatments is summarized in a <strong>league table</strong>, and treatments are ranked by their probability of being among the best for each outcome. The most common ranking metrics are <strong>SUCRA</strong> (Surface Under the Cumulative RAnking curve, 0–100%) and its frequentist analog the <strong>P-score</strong> — higher values mean a treatment is more likely to be near the top.</p>
+                        <p class="method-caveat"><em>Caveat —</em> rankings should always be read alongside the underlying effect sizes and the certainty of the evidence (assessed with frameworks such as <strong>CINeMA</strong> or <strong>GRADE for NMA</strong>). A treatment can rank first while the supporting evidence is sparse or imprecise. Reporting follows the <strong>PRISMA-NMA</strong> extension.</p>
+                    </div>
+
+                    <div class="bridge-block">
+                        <div class="bridge-label">Why NMA for TNBC?</div>
+                        <p>Over the past decade, several novel agents — immune checkpoint inhibitors (PD-1, PD-L1), PARP inhibitors, and additional cytotoxics such as platinums — have been added to the chemotherapy backbone in early-stage TNBC. Most have been tested against chemotherapy in separate randomized trials, but very few have been compared head-to-head against each other. NMA is the right tool for this situation: it pulls every trial into a single network and estimates the comparative efficacy and safety of every regimen, even those that have never met in a trial.</p>
                     </div>
                 </div>
                 <div id="tnbcContent" class="tab-content">
